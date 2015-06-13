@@ -7,7 +7,18 @@ Template.postSubmit.events({
       title: $(e.target).find('[name=title]').val()
     };
 
-    post._id = Posts.insert(post);
-    Router.go('postPage', post);
+    Meteor.call('postInsert', post, function(error, result) {
+      if(error) {
+        alert(error.reason);
+        return false;
+      }
+
+      if(result.postExists) {
+        alert("Post does already exist - redirecting")
+      }
+      Router.go('postPage', {_id: result._id});
+    });
+    // post._id = Posts.insert(post);
+    // Router.go('postPage', post);
   }
 });

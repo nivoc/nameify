@@ -18,7 +18,5 @@ Template.postSubmit.events({
       }
       Router.go('postPage', {_id: result._id});
     });
-    // post._id = Posts.insert(post);
-    // Router.go('postPage', post);
   }
 });

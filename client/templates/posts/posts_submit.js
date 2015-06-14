@@ -9,12 +9,12 @@ Template.postSubmit.events({
 
     Meteor.call('postInsert', post, function(error, result) {
       if(error) {
-        alert(error.reason);
+        throwError(error.reason);
         return false;
       }
 
       if(result.postExists) {
-        alert("Post does already exist - redirecting")
+        throwError("Post does already exist - redirecting");
       }
       Router.go('postPage', {_id: result._id});
     });

@@ -76,6 +76,11 @@ body {
     display: block;
     float: right;
     margin-top: 7px; }
+  .post .voteup {
+    display: block;
+    float: right;
+    margin-top: 7px; 
+    margin-right: 5px}
 
 .comments {
   list-style-type: none;

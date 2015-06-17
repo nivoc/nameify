@@ -11,4 +11,21 @@ Template.postItem.helpers({
       return false;
     }
   }
+  // commentsCount: function() {
+  //   return Comments.find({postId: this._id}).count();
+  // }
 });
+Template.postItem.events({
+  'click .voteup': function(e) {
+    e.preventDefault();
+    var currentPostId = this._id;
+    Meteor.call('voteUp', currentPostId, function(error, result) {
+      if(error) {
+        throwError(error.reason);
+        return false;
+      }
+
+    });
+  }
+});
+

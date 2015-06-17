@@ -1,7 +1,7 @@
 <template name="postItem">
   <div class="post">
     <div class="post-content">
-      <h3><a href="{{pathFor 'postPage'}}">{{domain}} ({{voteCount}})</a><span>{{title}}</span></h3>
+      <h3><a href="{{pathFor 'postPage'}}">{{url}} ({{voteCount}})</a><span>{{title}}</span></h3>
       <p>
         submitted by {{author}},
         <a href="{{pathFor 'postPage'}}">{{commentsCount}} comments</a>
